@@ -1,0 +1,13 @@
+{
+    "name": "com.anogame.selectionHistory",
+    "version": "1.0.0",
+    "displayName": "Selection History",
+    "description": "戻る・進むボタンで選択した履歴を遡ることが出来ます。 Undo/Redo selection history.",
+    "unity": "2020.3",
+    "author": {
+        "name": "anogame@watanabe",
+        "email": "watanabe.everystudio@gmail.com",
+        "url": "https://www.youtube.com/@anogamedev"
+    },
+    "dependencies": {}
+}
