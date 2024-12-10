@@ -1,5 +1,5 @@
 {
-    "name": "com.anogame.selectionHistory",
+    "name": "com.anogame.selectionhistory",
     "version": "1.0.0",
     "displayName": "Selection History",
     "description": "戻る・進むボタンで選択した履歴を遡ることが出来ます。 Undo/Redo selection history.",
