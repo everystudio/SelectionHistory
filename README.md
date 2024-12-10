@@ -20,6 +20,7 @@
         "com.anogame.selectionHistory": "1.0.0"
     }
 }
+```
 
 2. Unityエディタでプロジェクトを開き、パッケージマネージャーから `SelectionHistory` パッケージをインポートします。
 
