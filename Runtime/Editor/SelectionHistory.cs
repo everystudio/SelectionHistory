@@ -1,6 +1,26 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
+/*
+ * SelectionHistory.cs
+ * 
+ * This script defines an EditorWindow in Unity that keeps track of the selection history of objects in the editor.
+ * It allows users to navigate back and forth through their selection history using "Back" and "Forward" buttons.
+ * The selection history is displayed in a scrollable list, with the most recent selections at the top.
+ * 
+ * Features:
+ * - Tracks up to 20 selections.
+ * - Provides "Back" and "Forward" buttons to navigate through the selection history.
+ * - Displays the selection history in a scrollable list.
+ * 
+ * Usage:
+ * - Open the window from the Unity menu: Tools -> Selection History.
+ * - Use the "Back" and "Forward" buttons to navigate through the selection history.
+ * - Click on an item in the history list to reselect it.
+ * 
+ * Note:
+ * - The selection history is cleared when the window is closed.
+ */
 
 public class SelectionHistory : EditorWindow
 {
@@ -25,17 +45,18 @@ public class SelectionHistory : EditorWindow
 
     private void OnGUI()
     {
-        GUILayout.Label("選択履歴管理", EditorStyles.boldLabel);
+        GUILayout.Label("Selection History Management - 選択履歴管理", EditorStyles.boldLabel);
 
+        // Place buttons at the top of the window
         // ボタン群をウィンドウ上部に配置
         EditorGUILayout.BeginHorizontal();
         GUI.enabled = currentIndex > 0;
-        if (GUILayout.Button("戻る", GUILayout.Height(30)))
+        if (GUILayout.Button("Back\n戻る", GUILayout.Height(30)))
         {
             GoBack();
         }
         GUI.enabled = currentIndex < selectionHistory.Count - 1;
-        if (GUILayout.Button("進む", GUILayout.Height(30)))
+        if (GUILayout.Button("Forward\n進む", GUILayout.Height(30)))
         {
             GoForward();
         }
@@ -43,6 +64,7 @@ public class SelectionHistory : EditorWindow
         EditorGUILayout.EndHorizontal();
         GUILayout.Space(10);
 
+        // Display history list (scrollable, newest at the top)
         // 履歴リスト表示（スクロール可能、上から新しい順）
         scrollPosition = GUILayout.BeginScrollView(scrollPosition);
 
